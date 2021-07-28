@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-wrap: normal;
+}
+/* font-family: 'Dancing Script', cursive; */
+.Cadastro{
+    display: flex;
+    justify-content: center;
+}
+.ContainerCadastro{
+    width: 1200px;
+    height: 800px;
+    margin-top: 20px;
+    padding-top: 60px;
+    display: flex;
+    border: solid 1px #DAD4D9;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FDFDFD;
+}
+.ContainerLogo{
+    display: flex;
+    width: 475px;
+    justify-content: space-between;
+    align-items: center;
+}
+.ContainerLogo i{
+    font-size: 50px;
+}
+.TextoLogo{
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+}
+.FormularioCadastro{
+    width: 575px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.ContainerCampoCadastro{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.ContainerCampoCadastro label{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 85px;
+    text-align: end;
+}
+.InputCadastro{
+    height: 37px;
+    width: 395px;
+    border-radius: 50px;
+    border: 1px solid black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+}
+.InputSubmitCadastro{
+    height: 95px;
+    width: 332px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+.LinkRedirecionar{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+    color: blue;
+    margin-bottom: 50px;
+}
+.MensagemErro{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+    color: darkred;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<head>
+    <link href="~/css/Cadastro.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/77a9a4e10d.js" crossorigin="anonymous"></script>
+</head>
+<div class="Cadastro">
+    <div class="ContainerCadastro">
+        <div class="ContainerLogo">
+            <i class="fas fa-calculator"></i>
+            <h1 class="TextoLogo">Calculadora IMC</h1>
+        </div>
+        <form class="FormularioCadastro" method="POST" enctype="multipart/form-data" action='@Url.Action("Cadastrar")'>
+            <div class="ContainerCampoCadastro">
+                <label>Nome</label>
+                <input class="InputCadastro" type="text" pattern="[^;]*" required name="Nome"/>
+            </div>
+            <div class="ContainerCampoCadastro">
+                <label>Email</label>
+                <input class="InputCadastro" type="email" pattern="[^;]*" required name="Email"/>
+            </div>
+            <div class="ContainerCampoCadastro">
+                <label>Senha</label>
+                <input class="InputCadastro" type="password" pattern="[^;]*" required name="Senha"/>
+            </div>
+            <input class="InputSubmitCadastro" type="submit" value="Cadastrar" />
+        </form>
+        <span class="Mensagem Erro">@TempData.Peek("Mensagem")</span>
+        <a class="LinkRedirecionar" asp-area="" asp-controller="Login" asp-action="Index">Já possui uma conta? Conecte-se</a>
+    </div>
+</div>

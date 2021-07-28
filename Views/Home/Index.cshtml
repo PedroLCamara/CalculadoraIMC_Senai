@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "HomePage";
+}
+
+<head>
+    <link href="~/css/Home.css" rel="stylesheet" />
+</head>
+<div class="ContainerMain">
+    <section class="ContainerCadastroIMC ContainerGrid">
+        <form class="FormularioCadastroIMC" method="POST" enctype="multipart/form-data"
+            action='@Url.Action("PublicarIMC")'>
+            <div>
+                <label>Peso(KG)</label>
+                <input class="InputCadastroIMC" type="number" step="0.01" pattern="[^a-z]+[^A-Z]" required name="Peso">
+            </div>
+            <div>
+                <label>Altura(m)</label>
+                <input class="InputCadastroIMC" type="number" step="0.01" pattern="[^a-z]+[^A-Z]" required name="Altura">
+            </div>
+            <input class="InputPostIMC" type="submit" value="Publicar novo IMC">
+        </form>
+    </section>
+    <section class="ContainerTabelaIMC ContainerGrid">
+        <table>
+            <thead>
+                <th>Nome</th>
+                <th>Peso</th>
+                <th>Altura</th>
+                <th>IMC</th>
+                <th>Classificação IMC</th>
+            </thead>
+            @{
+                if (ViewBag.IMCs != null)
+                {
+                    @foreach (IMC item in ViewBag.IMCs)
+                    {
+                        <tr class="LinhaDadosTabela">
+                            @foreach (Usuario item2 in ViewBag.Usuarios)
+                            {
+                                if (item.IDUsuario == item2.IDUsuario)
+                                {
+                                    <td>@item2.Nome</td>
+                                }
+                            }
+                            <td>@item.Peso.ToString()</td>
+                            <td>@item.Altura.ToString()</td>
+                            <td>@item.ValorIMC.ToString()</td>
+                            <td>@item.ClassificacaoIMC</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr class="LinhaDadosTabela">
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                        </tr>
+                }
+            }
+        </table>
+    </section>
+</div>
